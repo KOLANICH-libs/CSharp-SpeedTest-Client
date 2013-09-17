@@ -15,6 +15,7 @@
 			if (disposing && (components != null))
 			{
 				components.Dispose();
+				speedTest.Dispose();
 			}
 			base.Dispose(disposing);
 		}
