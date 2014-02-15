@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
-using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net;
@@ -112,28 +112,32 @@ namespace SpeedTest
 			var pingTasks = new List<Task>();
 
 			for (int i = 1; i < servers.Count;i++){
-				var server = new SpeedTestServer(servers[i]);
+				SpeedTestServer server;
+				try {
+					server = new SpeedTestServer(servers[i]);
+				} catch {
+					continue;
+				};
 				server.dist = haversine(server);
 
-				if (closestKnownServer.dist - server.dist > distTreshold){
+				if (closestKnownServer.dist - server.dist > distTreshold) {
 					closestKnownServer = server;
 					this.servers.Add(server);
 					this.servers.RemoveAt(0);
 				}
-				else if (Math.Abs(closestKnownServer.dist - server.dist) <= distTreshold){
+				else if (Math.Abs(closestKnownServer.dist - server.dist) <= distTreshold) {
 					this.servers.Add(server);
 					//BUG: we need to enable it but it causes hang
 					pingTasks.Add(
-						Task.Run(async () => {
+						Task.Run(async () =>{
 							await server.ping();
-							if (closestKnownServer.latency > server.latency){
+							if (closestKnownServer.latency > server.latency) {
 								closestKnownServer = server;
 								this.servers.RemoveAt(0);
 							}
 						})
 					);
 				}
-				
 			}
 			await Task.WhenAll(pingTasks);//bug : it writes it has finished before it is really finished
 			return closestKnownServer;
