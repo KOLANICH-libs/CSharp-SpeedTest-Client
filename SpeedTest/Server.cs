@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.NetworkInformation;
-using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
 namespace SpeedTest
 {
-	public class SpeedTestServer : IComparable
+	public class Server : IComparable
 	{
 		public Uri uri;
 		public int id;
@@ -37,7 +35,7 @@ namespace SpeedTest
 			this.sponsor = sponsor;
 			_latency=-1;
 		}*/
-		public SpeedTestServer(int id, string name, Uri uri, float lat, float lon, string country, string sponsor) {
+		public Server(int id, string name, Uri uri, float lat, float lon, string country, string sponsor) {
 			this.id = id;
 			this.name = name;
 			this.uri = uri;
@@ -48,7 +46,7 @@ namespace SpeedTest
 			_latency = -1;
 		}
 
-		public SpeedTestServer(XmlNode xml)
+		public Server(XmlNode xml)
 			: this(
 				int.Parse(xml.Attributes["id"].Value),
 				xml.Attributes["name"].Value,
@@ -58,7 +56,7 @@ namespace SpeedTest
 				xml.Attributes["cc"].Value,
 				xml.Attributes["sponsor"].Value
 				) { }
-		public SpeedTestServer(int id, string name, string uri, float lat, float lon, string country, string sponsor)
+		public Server(int id, string name, string uri, float lat, float lon, string country, string sponsor)
 			: this(
 				id,
 				name,
@@ -69,16 +67,20 @@ namespace SpeedTest
 				country,
 				sponsor
 				) { }
+        const int maxTimeout=54;
 		public async Task<long> ping(){
 			_latency = long.MaxValue;
-			var pingSender = new Ping();
-			var reply = await pingSender.SendPingAsync(uri.Host,54);
-			_latency = reply.Status == IPStatus.Success ? reply.RoundtripTime : long.MaxValue;
+            try {
+                var pingSender = new Ping();
+                var reply = await pingSender.SendPingAsync(uri.Host, maxTimeout);
+                _latency = reply.Status == IPStatus.Success ? reply.RoundtripTime : long.MaxValue;
+            }
+            catch(PingException){ }
 			return _latency;
 		}
 
 		public int CompareTo(object obj) {
-			var serv = obj as SpeedTestServer;
+			var serv = obj as Server;
 			return latency.CompareTo(serv.latency);
 		}
 	}

@@ -1,0 +1,59 @@
+﻿<Window x:Class="SpeedTestGUIWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SpeedTest" Height="307.076" Width="588.811" Loaded="Form1_OnLoaded" ResizeMode="NoResize">
+    <Grid Margin="10,10,4,4">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="42*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="11*"/>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="48*"/>
+            <RowDefinition Height="51*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="62*"/>
+            <ColumnDefinition Width="54*"/>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="63*"/>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="36*"/>
+            <ColumnDefinition Width="69*"/>
+            <ColumnDefinition Width="22*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="114*"/>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="1" Grid.Column="1" >ISP:</Label>
+        <Label Name="ISPLbl" Margin="1,0,0,0" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2">ISPLbl</Label>
+        <Label Grid.Column="4" Grid.Row="1">Latitude:</Label>
+        <Label Name="custLatLbl" Grid.Column="5" Grid.Row="1" Grid.ColumnSpan="2">custLatLbl</Label>
+        <Label Grid.Column="7" Grid.Row="1" >Longitude:</Label>
+        <Label Name="custLonLbl" Grid.Column="8" Grid.Row="1" Grid.ColumnSpan="2">custLonLbl</Label>
+        <Label Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" >Upload Speed:</Label>
+        <Label Name="uploadSpeedLbl" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="5">uploadSpeedLbl</Label>
+        <Label Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="3" >Download Speed:</Label>
+        <Label Name="downloadSpeedLbl" Margin="0,0,1,0" Grid.Column="9" Grid.Row="5" Grid.ColumnSpan="2">downloadSpeedLbl</Label>
+
+        <Label Grid.Column="7" Grid.Row="3">Ping:</Label>
+        <Label Name="pingLbl" Grid.Column="8" Grid.Row="3" Grid.ColumnSpan="2">pingLbl</Label>
+        <Label Grid.Row="2" Grid.Column="1">Server:</Label>
+        <Label Name="serverLbl" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2">serverLbl</Label>
+        <Label Grid.Column="7" Grid.Row="2">Longitude:</Label>
+        <Label Name="servLonLbl" Grid.Column="8" Grid.Row="2" Grid.ColumnSpan="2">srvLonLbl</Label>
+        <Label Grid.Column="4" Grid.Row="2">Latitude:</Label>
+        <Label Name="servLatLbl" Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="2">srvLatLbl</Label>
+        <Label Margin="0,0,6,0" Grid.Row="3" Grid.Column="1">Sponsor:</Label>
+        <Label Name="sponsorLbl" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2">sponsorLbl</Label>
+        <Label Grid.Column="4" Grid.Row="3">Country:</Label>
+        <Label Name="servCountryLbl" Grid.Column="5" Grid.Row="3" Grid.ColumnSpan="2">servCountryLbl</Label>
+        <ProgressBar x:Name="downloadProgress" Margin="0,10,1,10" Grid.ColumnSpan="10" Grid.Row="6" Grid.Column="1"/>
+        <ProgressBar x:Name="uploadProgress" Margin="0,10,1,10" Grid.ColumnSpan="10" Grid.Row="7" Grid.Column="1"/>
+        <Button Name="startTestBtn" TabIndex="1" Margin="0,0,1,0" Grid.Column="10" Grid.RowSpan="3" Grid.Row="1" Click="startTestBtn_Click" IsDefault="True" ToolTip="Start measuring">
+            START TEH TEST
+        </Button>
+    </Grid>
+</Window>

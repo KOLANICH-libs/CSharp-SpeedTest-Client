@@ -1,7 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.22013.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedTest", "SpeedTest\SpeedTest.csproj", "{0A02676D-F7E6-43FA-9F6D-D27446EE952B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StupidSpeedMeasurer", "StupidSpeedMeasurer\StupidSpeedMeasurer.csproj", "{3E01051A-5287-4B4D-90D6-FB5E1B055F42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedTestGUI", "SpeedTestGUI\SpeedTestGUI.csproj", "{190B61B3-ECF8-4159-85CC-A510115503CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeasuringStreams", "MeasuringStreams\MeasuringStreams.csproj", "{3352E435-73C3-4699-BC59-4F7F3FD79590}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeasuringStreamsTest", "MeasuringStreamsTest\MeasuringStreamsTest.csproj", "{76544E6D-F25A-4358-8041-08A020288227}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +23,22 @@ Global
 		{0A02676D-F7E6-43FA-9F6D-D27446EE952B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A02676D-F7E6-43FA-9F6D-D27446EE952B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A02676D-F7E6-43FA-9F6D-D27446EE952B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E01051A-5287-4B4D-90D6-FB5E1B055F42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E01051A-5287-4B4D-90D6-FB5E1B055F42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E01051A-5287-4B4D-90D6-FB5E1B055F42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E01051A-5287-4B4D-90D6-FB5E1B055F42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{190B61B3-ECF8-4159-85CC-A510115503CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{190B61B3-ECF8-4159-85CC-A510115503CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{190B61B3-ECF8-4159-85CC-A510115503CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{190B61B3-ECF8-4159-85CC-A510115503CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3352E435-73C3-4699-BC59-4F7F3FD79590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3352E435-73C3-4699-BC59-4F7F3FD79590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3352E435-73C3-4699-BC59-4F7F3FD79590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3352E435-73C3-4699-BC59-4F7F3FD79590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76544E6D-F25A-4358-8041-08A020288227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76544E6D-F25A-4358-8041-08A020288227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76544E6D-F25A-4358-8041-08A020288227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76544E6D-F25A-4358-8041-08A020288227}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

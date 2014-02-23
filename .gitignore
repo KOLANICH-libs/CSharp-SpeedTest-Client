@@ -11,12 +11,15 @@ Thumbs.db
 *.ncb
 *.suo
 *.sln.docstates
+*.sln.ide
 *.tlb
 *.tlh
 *.bak
 *.cache
 *.ilk
 *.log
+.vs
+vs
 [Bb]in
 [Dd]ebug*/
 *.lib
